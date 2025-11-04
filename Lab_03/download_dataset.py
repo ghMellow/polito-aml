@@ -44,8 +44,8 @@ def download_dataset(output_dir):
     # Create output directory
     os.makedirs(output_dir, exist_ok=True)
     
-    # Move files to output directory
-    print(f"\n✓ Moving files to {output_dir}...")
+    # Copy files to output directory (use copy instead of move for read-only filesystems)
+    print(f"\n✓ Copying files to {output_dir}...")
     
     for item in os.listdir(path):
         src = os.path.join(path, item)
@@ -54,8 +54,12 @@ def download_dataset(output_dir):
         if os.path.exists(dst):
             print(f"  - Skipping {item} (already exists)")
         else:
-            shutil.move(src, dst)
-            print(f"  - Moved {item}")
+            if os.path.isdir(src):
+                shutil.copytree(src, dst)
+                print(f"  - Copied {item}/")
+            else:
+                shutil.copy2(src, dst)
+                print(f"  - Copied {item}")
     
     print("\n" + "="*60)
     print("DATASET READY!")
