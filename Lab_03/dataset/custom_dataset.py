@@ -80,8 +80,14 @@ def create_annotations_csv(data_dir, output_csv, class_folders=None):
     df.to_csv(output_csv, index=False)
     
     print(f"Created {output_csv} with {len(df)} images")
-    for folder_name, label in class_folders.items():
-        count = len(df[df['label'] == label])
-        print(f"  {folder_name.capitalize()}: {count}")
+    
+    # Only print class distribution if we found images
+    if len(df) > 0:
+        for folder_name, label in class_folders.items():
+            count = len(df[df['label'] == label])
+            print(f"  {folder_name.capitalize()}: {count}")
+    else:
+        print(f"  WARNING: No images found in {data_dir}")
+        print(f"  Expected folders: {list(class_folders.keys())}")
     
     return df

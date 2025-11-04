@@ -264,11 +264,20 @@ def main():
     # Create annotation files if they don't exist
     if not os.path.exists('train_annotations.csv'):
         print("\n✓ Creating training annotations...")
-        create_annotations_csv(train_path, 'train_annotations.csv')
+        train_df = create_annotations_csv(train_path, 'train_annotations.csv')
+        if len(train_df) == 0:
+            print(f"\n❌ ERROR: No training images found!")
+            print(f"   Expected path: {train_path}")
+            print(f"   Please check that the dataset is downloaded and structured correctly:")
+            print(f"   {train_path}/cats/")
+            print(f"   {train_path}/dogs/")
+            return
     
     if not os.path.exists('test_annotations.csv'):
         print("✓ Creating test annotations...")
-        create_annotations_csv(test_path, 'test_annotations.csv')
+        test_df = create_annotations_csv(test_path, 'test_annotations.csv')
+        if len(test_df) == 0:
+            print(f"\n⚠️  WARNING: No test images found at {test_path}")
     
     # Get transforms
     train_transform = get_train_transforms()
