@@ -1,0 +1,36 @@
+{
+  "os": "macOS-26.1-arm64-arm-64bit",
+  "python": "CPython 3.12.6",
+  "startedAt": "2025-11-18T20:31:55.511940Z",
+  "program": "/Users/nicolotermine/zMellow/GitHub-Poli/Polito/polito-aml/Lab_04/AML_lab04.ipynb",
+  "codePath": "/Users/nicolotermine/zMellow/GitHub-Poli/Polito/polito-aml/Lab_04/AML_lab04.ipynb",
+  "codePathLocal": "AML_lab04.ipynb",
+  "git": {
+    "remote": "git@github.com:ghMellow/polito-aml.git",
+    "commit": "21ee94ddaa01d037302f5b16086cf5eae1e29a6d"
+  },
+  "email": "s338680@studenti.polito.it",
+  "root": "/Users/nicolotermine/zMellow/GitHub-Poli/Polito/polito-aml/Lab_04",
+  "host": "Mac.homenet.telecomitalia.it",
+  "executable": "/Users/nicolotermine/Library/Caches/pypoetry/virtualenvs/lab-04-RLYAEv7G-py3.12/bin/python",
+  "cpu_count": 12,
+  "cpu_count_logical": 12,
+  "disk": {
+    "/": {
+      "total": "494384795648",
+      "used": "320529854464"
+    }
+  },
+  "memory": {
+    "total": "25769803776"
+  },
+  "apple": {
+    "name": "Apple M4 Pro",
+    "ecpuCores": 4,
+    "pcpuCores": 8,
+    "gpuCores": 16,
+    "memoryGb": 24,
+    "ramTotalBytes": "25769803776"
+  },
+  "writerId": "gokrvdjtmja4z6r5azf9gs0dstvsfdrg"
+}
